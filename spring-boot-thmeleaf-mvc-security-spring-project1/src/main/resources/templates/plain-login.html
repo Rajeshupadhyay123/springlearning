@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Plain Login</title>
+
+<style>
+	.failed{
+		color: red;
+	}
+</style>
+
+</head>
+
+<body>
+
+	<h3>My Custom Login Page</h3>
+	
+	<form action="#" th:action= "@{/authenticateTheUser}" method="post">
+		
+		<!--
+			If Spring failed the user authentication then it throws error on 
+			"/error" URL.
+		 -->
+		 
+		 <div th:if = "${param.error}" class="failed">
+			 
+			 <i>Sorry! You entered invalid username and password</i>
+			 
+		 </div>
+		
+		
+		<p>
+			User Name: <input type="text" name="username" />
+		</p>
+		
+		<p>
+			Password: <input type="password" name="password" />
+		</p>
+		
+		
+		<input type="submit" value="Login" />
+		
+	</form>
+
+</body>
+</html>
+
+
+<!-- 
+	The Spring security by-default take the name as "username" and "password"
+	
+	If we will chnage this name then it will not work. In this case we need to explicitly
+	need to handle.
+ -->

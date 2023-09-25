@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+	<title>Save Employee</title>
+</head>
+
+
+<!-- Here th:action is refer for location and th:object is for model -->
+		 
+		 <!--
+			 When this page is loaded, thymeleaf by-default call the getter method and set into the field 
+			 if already some data is present for the model.
+			 
+			 else, When we fill some data into the field then it call the setter method 
+			 and add the field data into the model object.
+			 
+			 and, action object call the handling url who handle the Model object
+			 
+			 -->
+
+
+<body>
+
+ 	<div class="container">
+		 
+		 <h3>Employee Directory</h3>
+		 <hr>
+		 
+		 <p class="h4 mb-4">Save Employee</p>
+		 
+		 <form action="#" th:action = "@{/employees/save}"
+		        th:object = "${employee}" method="post">
+		        
+		       	<!-- Add hidden field to handle the Update -->
+		       	<input type="hidden" th:field = "*{id}">
+		        
+		        <input type="text" th:field = "*{firstName}" class="form-control mb-4 w-25"
+		            placeholder="First Name">
+		            
+		         <input type="text" th:field = "*{lastName}" class="form-control mb-4 w-25"
+		            placeholder="Last Name">
+		            
+		        <input type="text" th:field = "*{email}" class="form-control mb-4 w-25"
+		            placeholder="Email">
+		            
+		        
+		       <button type="submit" class="btn btn-info col-2">Save</button>     
+		                     
+		        
+		        
+		   </form>
+		 
+		 <hr>
+		 	<a th:href="@{/employees/emplist}">Back to Employees List</a>
+		 
+	 </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Rajesh Company: Home Page</title>
+</head>
+<hrbody>
+
+	<h2>
+		Rajesh Company Home Page
+	</h2>
+
+	<hr>
+
+	<P>Welcome to the Rajesh Home Page!</P>
+
+	<hr>
+	<!-- display user name and role 
+simple way by using thymeleaf
+-->
+
+	<p>
+		User: <span sec:authentication="principal.username"></span>
+		<br><br>
+		Role: <span sec:authentication="principal.authorities"></span>
+	</p>
+
+	<br><br>
+	<hr>
+	
+	<!--
+		If we want to restrict some resource based on authority/Role then
+		we should use the hasRole() method into thymeleaf
+		-->
+
+	<div sec:authorize="hasRole('MANAGER')">
+
+		<!-- Add a link to point to /leaders... this is for manager -->
+
+		<p>
+			<a th:href="@{/leaders}">Leadership Meeting</a>
+			(Only for Manager)
+		</p>
+
+
+	</div>
+
+	<hr>
+
+	<div sec:authorize="hasRole('ADMIN')">
+
+		<!-- Add a link to point to /systems... this is for manager -->
+
+		<p>
+			<a th:href="@{/systems}">IT System Meeting</a>
+			(Only for Admin)
+		</p>
+
+	</div>
+
+	<br>
+	<a th:href="@{/userdetails_third}">Check the user login</a>
+
+
+	<!-- 
+	If we send the post request on the URL = "/logout".
+	Logout URL will handle by Spring Security Filter automatically.
+	And, when the Spring Security perform logout process, It Invalidate user's HTTP session
+	and remove session cookies.
+	And, Send the user back to the login page after appending parameter ":?logout"
+ -->
+
+	<form action="#" th:action="@{/logout}" method="post">
+
+		<input type="submit" value="Logout" />
+
+	</form>
+
+
+	</br>
+
+</html>

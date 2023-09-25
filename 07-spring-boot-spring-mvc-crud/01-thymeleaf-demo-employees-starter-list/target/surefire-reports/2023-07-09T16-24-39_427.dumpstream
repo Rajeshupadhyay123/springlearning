@@ -1,0 +1,5 @@
+# Created at 2023-07-09T16:24:39.742
+Boot Manifest-JAR contains absolute paths in classpath 'F:\Springlearning\Working_Dir\07-spring-boot-spring-mvc-crud\01-thymeleaf-demo-employees-starter-list\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

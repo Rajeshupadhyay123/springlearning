@@ -1,0 +1,6 @@
+Default Fetch Type for Mapping:-
+
+@OneToOne --> FetchType.EAGER
+@OneToMany -->FetchType.LAZY
+@ManyToOne -->FetchType.EAGER
+@ManyToMany -->FetchType.LAZY

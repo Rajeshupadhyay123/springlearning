@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+	<title>Rajesh Project</title>
+	
+	<!-- @ symbol Reference context of your application
+	(app root)
+	
+	Always remember, spring always search the CSS file into Resource/static folder
+	because of this I didn't mention the /resource/static path for calling demo.css
+	 -->
+	
+	<link rel="stylesheet"
+		th:href="@{/css/demo.css}" />
+</head>
+
+<body>
+
+	<p th:text = "'Date is '+${theDat}"  class="funny"/>
+
+</body>
+</html>

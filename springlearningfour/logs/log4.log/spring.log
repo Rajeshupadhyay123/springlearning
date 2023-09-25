@@ -1,0 +1,48 @@
+2023-04-26T20:58:09.979+05:30  INFO 6632 --- [restartedMain] c.r.s.d.s.SpringlearningfourApplication  : Starting SpringlearningfourApplication using Java 17.0.7 with PID 6632 (F:\Springlearning\Working_Dir\springlearningfour\target\classes started by princ in F:\Springlearning\Working_Dir\springlearningfour)
+2023-04-26T20:58:09.981+05:30  INFO 6632 --- [restartedMain] c.r.s.d.s.SpringlearningfourApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:58:10.468+05:30  INFO 6632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7070 (http)
+2023-04-26T20:58:10.469+05:30  INFO 6632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:58:10.471+05:30  INFO 6632 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-26T20:58:10.498+05:30  INFO 6632 --- [restartedMain] o.a.c.c.C.[.[localhost].[/rajesh]        : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:58:10.498+05:30  INFO 6632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 507 ms
+2023-04-26T20:58:10.689+05:30  INFO 6632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-26T20:58:10.695+05:30  INFO 6632 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-26T20:58:10.726+05:30  INFO 6632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7070 (http) with context path '/rajesh'
+2023-04-26T20:58:10.739+05:30  INFO 6632 --- [restartedMain] c.r.s.d.s.SpringlearningfourApplication  : Started SpringlearningfourApplication in 0.855 seconds (process running for 174.018)
+2023-04-26T20:58:10.745+05:30  INFO 6632 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   LogFileWebEndpointAutoConfiguration#logFileWebEndpoint matched:
+      - Log File found logging.file.path logs/log4.log (LogFileWebEndpointAutoConfiguration.LogFileCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.logging.LogFileWebEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2023-04-26T20:58:50.420+05:30  INFO 6632 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-04-26T20:58:50.462+05:30  INFO 6632 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
