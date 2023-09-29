@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Customer Registration Form</title>
+
+<style>
+	.error {color: red;}
+</style>
+
+</head>
+
+
+<body>
+
+<i>Fill out the form. Asterisk(*) means required.</i>
+
+<!-- 
+	th:action:- tell where to submit the data
+	
+	th:object:- tell Model attribute name which are coming from the controller 
+	and model attribute name should match the name of the attributed sended by controller
+	
+	post:- we are sending a POST request.
+	
+	th:field:- tell the property name of the Customer Class
+	
+	
+	for better understanding:- https://www.baeldung.com/thymeleaf-in-spring-mvc
+ -->
+
+<form th:action="@{/processForm}" th:object="${customer}" method="POST">
+	
+	First name: <input type="text" th:field="*{firstName}" />
+	
+	<br><br>
+	
+	Last name (*): <input type="text" th:field="*{lastName}" />
+	
+	
+	<!-- Add error message if present
+		1.We can use the #fields.hasErrors() function to check if a field has
+		 any validation errors.
+		 
+		2.we can use the th:errors attribute to display error messages.
+	
+	 -->
+	
+	
+	<span th:if = "${#fields.hasErrors('lastName')}"
+			th:errors="*{lastName}"
+			class="error"></span>
+	
+	
+	<br><br>
+	
+	Free passes: <input type="text" th:field="*{freePasses}" />
+	
+	
+	<span th:if = "${#fields.hasErrors('freePasses')}"
+			th:errors="*{freePasses}"
+			class="error"></span>
+	
+	<br><br>
+	
+	Postal Code: <input type="text" th:field="*{postalCode}" />
+	
+	
+	<span th:if = "${#fields.hasErrors('postalCode')}"
+			th:errors="*{postalCode}"
+			class="error"></span>
+	
+	
+	<br><br>
+	
+	Course Code: <input type="text" th:field="*{courseCode}" />
+	
+	
+	<span th:if = "${#fields.hasErrors('courseCode')}"
+			th:errors="*{courseCode}"
+			class="error"></span>
+	
+	
+	<br><br>
+	
+	<input type="submit" value="Submit" />
+	
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
