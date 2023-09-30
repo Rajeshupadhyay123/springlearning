@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Form</title>
+</head>
+<body>
+
+<form th:action="@{/processForm}" th:object="${student}" method="POST" >
+	
+	FirstName: <input type="text" th:field="*{firstName}"/> <br><br>
+	LastName: <input type="text" th:field="*{lastName}" /> <br><br>
+	
+	<!--<select th:field="*{country}">
+		<option value="India">India</option>
+		<option value="China">China</option>
+		<option value="US">US</option>
+		<option value="Brazil">Brazil</option>
+	</select> -->
+	
+	<!-- Dynamic data coming from controller -->
+	
+	<select th:field="*{country}">
+		
+		<option th:each="tempCountry : ${countries}"
+		 th:value="${tempCountry}" th:text="${tempCountry}" />
+		
+	</select>
+	
+	<br><br>
+	
+	Favorite Programming Language:
+	<!--<input type="radio" th:field="*{favoriteLanguage}" th:value="Go">GO </input>
+	<input type="radio" th:field="*{favoriteLanguage}" th:value="Java" >Java</input>
+	<input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>-->
+	
+	<!-- Add Dynamic for Radio -->
+	<input type="radio" th:field="*{favoriteLanguage}"
+			th:each="tempLang : ${languages}"
+			th:value="${tempLang}"
+			th:text="${tempLang}" />
+	
+	<br><br>
+	
+	Favorite OS:
+	<!--<input type="checkbox" th:field="*{favoriteSystem}" th:value="Linux">Linux</input> 
+	<input type="checkbox" th:field="*{favoriteSystem}" th:value="Mac">Mac</input> -->
+	<!-- if value has some space in between then wrap them into '' --> 
+	<!--<input type="checkbox" th:field="*{favoriteSystem}" 
+			th:value="'Windows Windows'">Microsoft Windows</input> -->
+	
+	<input type="checkbox" 
+			th:field="*{favoriteSystem}"
+	 		th:each="tempSystem: ${systems}"
+	  		th:value="${tempSystem}"
+			th:text="${tempSystem}" />
+			
+			
+			<br><br>
+					
+	
+	
+	<input type="submit" value="submit">
+	
+	
+	
+	
+</form>
+
+
+</body>
+</html>
