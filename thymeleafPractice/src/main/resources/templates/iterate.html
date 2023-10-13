@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Iterate</title>
+</head>
+<body>
+	
+	<h1>Going to traverse element</h1>
+	
+	<h1 th:text="${names}"></h1>
+	
+	<!--
+		th:each feature
+		index: the current iteration index, starting with 0
+		count: the number of elements processed so for
+		size: the total number of elements in the list
+		even/odd: checks if the current iteration index is even or odd
+		first: checks if the current iteration is the first one
+		last: checks if the  current itertaion is the last one 
+	-->
+	
+	<ul>
+		<li th:each="n,status: ${names}">
+			
+			<span 
+			th:style="${status.odd} ? 'font-weight:bold' : 'color:red'"
+			 th:text="${status.index}+' '+ ${n}"></span>
+			
+		</li>
+		
+	</ul>
+	
+
+</body>
+</html>

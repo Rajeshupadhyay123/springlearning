@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Services Page</title>
+</head>
+<body>
+
+<h1>This are the servies provided by Rajesh upadhyay</h1>
+
+<!-- First Footer is the name of footer file
+	 Second Footer is the th:fragment name which are present in that file -->
+
+<footer id="hosttag" th:replace="footer::footer1(${title}, ${subtitle})">
+	
+</footer>
+
+</body>
+</html>
+
+<!--
+	th:replace
+		It will actually substitute the host tag [tag where we use replace] by the fragment's.
+		That means, it will remove the host tag and in place of host tag, it will add the
+		specified fragment including the fragment tag. 
+		
+		
+	th:insert
+		It will simply insert the specified fragment as the body of its host tag including the
+		fragment tag.
+		
+		
+	th:include
+		It will also insert the specified fragment as the body of its host tag but excluding the fragment tag.
+		
+		
+		https://www.thymeleaf.org/doc/articles/layouts.html#:~:text=Basic%20inclusion%20with%20th%3Ainsert,host%20tag%20by%20the%20fragment's).		
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

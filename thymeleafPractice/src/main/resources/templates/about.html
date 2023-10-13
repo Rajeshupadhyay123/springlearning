@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>About</title>
+</head>
+<body>
+	
+	<h1>About Page Loading....</h1>
+	
+	<h1 th:text="${#strings}"></h1>
+	<p>Length of name: <span th:text="${#strings.length(name)}"></span> </p>
+	<h1> Name: <span th:text="${currentDate}"> </h1>
+	
+	<div  th:with="a=5, n=${name}">
+		
+		<h1>value of a is <span th:text="${a}"></span> </h1>
+		
+		<h1 th:text="'value of b is '+${b} +' value of n is '+${n}"></h1>
+		
+	</div>
+
+</body>
+</html>

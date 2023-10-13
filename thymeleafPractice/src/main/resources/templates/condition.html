@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Condition</title>
+</head>
+<body>
+
+<h1>Conditional Page.............</h1>
+<h1>Use is <span th:text="${isActive}? 'ACTIVE' : 'INACTIVE'"></span> </h1>
+
+
+<h1 th:if="${gender}=='M'">Male</h1>
+<h1 th:unless="${gender}=='M'">Female</h1>
+
+<!-- All the predefine keywords for java comes with '#' -->
+<div th:switch="${#lists.size(myList)}">
+	<h1 th:case="'0'">List Contain 0 elements</h1>
+	<h2 th:case="'1'">List Contain 1 elements</h2>
+	<h1 th:case="*">List contain more then 1 element</h1>
+	
+</div>
+
+</body>
+</html>

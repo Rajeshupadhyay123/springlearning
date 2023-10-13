@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Footer Templet</title>
+</head>
+<body>
+	
+	<footer id="fragnettag" th:fragment="footer1(title,subtitle)">
+		
+		<div class="container" >
+			
+			<h1 th:text="'About '+ ${title}"></h1>
+			<h2 th:text="${subtitle}"></h2>
+			<h2>Provide Good Content about java programming</h2>
+			<h1>Free to contect........</h1>
+			
+		</div>
+		
+	</footer>
+
+</body>
+</html>

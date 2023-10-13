@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!-- 
+	inside th:replace
+	first paramter 'base' is the file name of footer file where we need to send out content
+	second parameter 'layout' is the name of the footer which was ceated with th:footer
+	third parameter 'section' is the code section in the current page which need to send on footer file
+-->
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+ th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<section>
+		
+		<h1>This is Rajesh</h1>
+		<p>You can make a footer invisible by using the hidden attribute. You can specify either 'hidden' (without value) or
+			'hidden="hidden"'. A hidden footer is not visible, but maintains its position on the page.
+			An effective footer should include essential information, such as: Contact details, Navigation links, Legal
+			information.
+			A footer typically contains: Authorship information, Copyright information, Sitemap, Back to top links, Related
+			documents.
+		</p>
+		
+	</section>
+
+</body>
+</html>
