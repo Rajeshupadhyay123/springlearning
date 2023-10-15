@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Example</title>
+
+<!-- If anywhere we want to link something then we should use @ in thymeleaf -->
+
+<link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="" th:href="@{/css/mystyle.css}" />
+
+</head>
+<body>
+	
+	<div class="container">
+		
+		<img class="profile" src="" th:src="@{/image/profile.png}" />
+		
+		<h1>Adding CSS and JavaScript and image in thymeleaf</h1>
+		
+	</div>
+	
+	
+	<script src="" th:src="@{/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
