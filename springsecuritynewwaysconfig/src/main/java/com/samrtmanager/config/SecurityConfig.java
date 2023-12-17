@@ -23,6 +23,8 @@ import com.samrtmanager.service.UserInfoUserDetailService;
 public class SecurityConfig {
 
 	
+
+	
 //	@Bean
 //	public InMemoryUserDetailsManager getUserDetail() {
 //		
